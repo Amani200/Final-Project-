@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %} 
+
+{% for pay in pay %}
+
+<h4 class="mb-3 text-center">المعلومات الدفع </h4>
+      
+                
+                <div class="row gy-3 mt-5">
+                  <div class="col-md-6">
+                    <label for="cc-name" class="form-label">الاسم على البطاقة</label>
+                    <h5 class="alert alert-success"> {{pay.name_in_card}} </h5>
+                    <div class="invalid-feedback">
+                      الاسم على البطاقة مطلوب
+                    </div>
+                  </div>
+      
+                  <div class="col-md-6">
+                    <label for="cc-number" class="form-label">رقم البطاقة</label>
+                    <h5 class="alert alert-success"> {{pay.number_card}}</h5>
+                    <div class="invalid-feedback">
+                      رقم بطاقة الائتمان مطلوب
+                    </div>
+                  </div>
+      
+                  <div class="col-md-3">
+                    <label for="cc-expiration" class="form-label">تاريخ انتهاء الصلاحية </label>
+                    <h5 class="alert alert-success"> {{pay.date_card}}</h5>
+                    <div class="invalid-feedback">
+                      تاريخ انتهاء الصلاحية مطلوب
+                    </div>
+                  </div>
+      
+                  <div class="col-md-3">
+                    <label for="cc-cvv" class="form-label">الرمز الثلاثي (CVV) </label>
+                    <h5 class="alert alert-success"> {{pay.cvv_card}}</h5>
+                    <div class="invalid-feedback">
+                      رمز الحماية مطلوب
+                    </div>
+                  </div>
+                </div>
+      
+                <hr class="my-4">
+                <a href="{% url 'done' %}" class="w-100 btn btn-danger text-white btn-lg">متابعة </a>
+
+              </form>
+              </form>
+            
+            </div>
+          </div>
+{% endfor %}
+
+
+
+{% endblock %}

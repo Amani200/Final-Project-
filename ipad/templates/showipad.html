@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %} 
+{% for item in ipad %}
+<div class="row mt-3 text-center d-flex justify-content-center">
+  <div class="col-sm-9">
+    <div class="card mt-3">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm-4 mt-5">
+            <img src="static/images/{{item.img}}" class="img-thumbnail border border-white rounded mx-auto ms-2 d-block mt-5"></div>
+          <div class="col-sm-7 ms-5">
+            <ul class="list-unstyled">
+              <li class="alert alert bg-light text-dark">Color: {{item.color}}</li>
+              <li class="alert alert bg-light text-dark"><strong> {{item.price}} SAR </strong></li>
+              <li class="alert alert bg-light text-dark">Quantity: {{item.qty}}</li>
+              <li class="alert alert bg-light text-dark">Tax: {{item.tax}}</li>
+              <li class="alert alert bg-light text-dark">Total: {{item.total}} SAR</li>
+              <li class="alert alert bg-light text-dark">Model: {{item.itemmsid.name}}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row ms-5">
+          <div class="col-sm-20 ms-5">
+            <a href="{% url 'detailsipad' id=item.id %}" class="btn  btn-danger text-whit ms-5 ">Product Details</a>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}
