@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-sm-12">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{form.as_p}}
+
+                    <a href="{% url 'pay' %}" class="w-100 btn btn-danger text-white btn-lg ">  الاستمرار بالدفع</a>
+
+                </form>
+
+        </div>
+    </div>
+ {% endblock %} 

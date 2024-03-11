@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %} 
+<form method="post" calss="form-group">
+    {%csrf_token%}
+    {{registerform.as_p}}
+    <button class="btn btn-danger text-white" type="submit"> Register </button>
+</form>
+{% endblock %}
